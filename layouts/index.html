@@ -1,0 +1,12 @@
+{{ define "main" }}
+
+{{ $pages := where $.Site.RegularPages "Type" "posts" }}
+{{ $paginator := .Paginate $pages }}
+<div class="content-container">
+    {{ range $paginator.Pages }}
+        {{ partial "summary.html" . }}
+    {{ end }}
+
+    {{ partial "pagination.html" . }}
+</div>
+{{ end }}

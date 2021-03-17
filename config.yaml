@@ -1,0 +1,28 @@
+baseURL: 'https://notatkideva.pl/'
+languageCode: 'pl-pl'
+title: 'Notatki Deva'
+
+sectionPagesMenu: ''
+
+disqusShortname: 'notatkideva'
+googleAnalytics: 'UA-8284530-15'
+
+disableKinds: [section, taxonomy]
+ignoreErrors: ["error-disable-taxonomy"]
+
+params:
+    subtitle: 'Trochę kodu, trochę gadania'
+
+markup:
+    goldmark:
+        renderer:
+            unsafe: true
+    highlight:
+        noClasses: false
+
+paginate: 5
+
+permalinks:
+    /: '/:slug'
+    posts: '/:year/:month/:slug'
+    pages: '/:slug'

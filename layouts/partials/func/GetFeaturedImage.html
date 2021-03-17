@@ -1,0 +1,17 @@
+{{ $featuredImage := "" }}
+
+{{ $fallbackImage := resources.Get "images/placeholder.png" }}
+{{ $paramImage := .Params.image }}
+
+{{ if not $paramImage }}
+    {{/* $featuredImage = $fallbackImage */}}
+{{ else }}
+    {{ $resourceImage := .Resources.GetMatch $paramImage }}
+    {{ if not $resourceImage }}
+        {{ $featuredImage = $fallbackImage }}
+    {{ else }}
+        {{ $featuredImage = $resourceImage }}
+    {{ end }}
+{{ end }}
+
+{{ return $featuredImage }}

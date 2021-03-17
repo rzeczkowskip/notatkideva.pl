@@ -1,0 +1,25 @@
+{{ $alt := .Text }}
+{{ $imgLink := (.Destination | safeURL) }}
+{{ $isLink := false }}
+
+{{ if hasPrefix $alt "__" }}
+    {{ $alt := substr $alt 2 }}
+    {{ $isLink = true }}
+{{ end }}
+
+{{ $imgHtml := (printf "<img src=\"%s\" alt=\"%s\">" $imgLink $alt) }}
+
+{{ if $isLink }}
+    {{ $imgHtml = (printf "<a target=\"blank\" href=\"%s\">%s</a>" $imgLink $imgHtml) }}
+{{ end }}
+
+{{ if .Title }}
+<figure>
+    {{ $imgHtml | safeHTML }}
+    <figcaption class="text-center">
+        {{ .Title }}
+    </figcaption>
+</figure>
+{{ else }}
+    {{ $imgHtml | safeHTML }}
+{{ end }}

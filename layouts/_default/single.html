@@ -1,0 +1,21 @@
+{{ define "main" }}
+{{ $section := .Site.GetPage "section" .Section }}
+<article class="content-container" data-controller="post-progress">
+    <div class="fixed h-1 w-0 left-0 top-0 z-50 bg-lead-base" data-post-progress-target="progressBar"></div>
+
+    <header class="mb-8">
+        <div class="markup">
+            <h1>{{ .Title }}</h1>
+        </div>
+
+        {{ $featuredImage := partial "func/GetFeaturedImage.html" . }}
+        {{ if $featuredImage }}
+        <img class="block w-full mx-auto" src="{{ ($featuredImage.Resize "736x").RelPermalink }}">
+        {{ end }}
+    </header>
+
+    <div class="markup">
+        {{ .Content }}
+    </div>
+</article>
+{{ end }}

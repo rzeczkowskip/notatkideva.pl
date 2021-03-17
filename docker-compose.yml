@@ -1,0 +1,16 @@
+version: '3'
+services:
+    hugo:
+        image: klakegg/hugo:0.81.0
+        volumes:
+            - .:/src
+        environment:
+            - HUGO_ENV=production
+
+    node:
+        build: ./docker/node
+        working_dir: /app
+        volumes:
+            - .:/app:cached
+        environment:
+            - NODE_ENV=production

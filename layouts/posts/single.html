@@ -1,0 +1,39 @@
+{{ define "main" }}
+{{ $section := .Site.GetPage "section" .Section }}
+<article class="content-container" data-controller="post-progress">
+    <div class="fixed h-1 w-0 left-0 top-0 z-50 bg-lead-base" data-post-progress-target="progressBar"></div>
+
+    <header class="mb-8">
+        <div class="markup">
+            <h1>{{ .Title }}</h1>
+        </div>
+
+        <div class="mb-8 text-xs lg:flex whitespace-no-wrap post-meta no-markup text-black">
+            {{ partial "post-meta.html" . }}
+        </div>
+
+        {{ $featuredImage := partial "func/GetFeaturedImage.html" . }}
+        {{ if $featuredImage }}
+            <img class="block w-full mx-auto" src="{{ ($featuredImage.Resize "736x").RelPermalink }}">
+        {{ end }}
+    </header>
+
+    <div class="markup">
+        {{ .Content }}
+    </div>
+
+    <section>
+        <div class="my-8">
+            {{- partial "tags.html" . -}}
+        </div>
+    </section>
+
+    {{ if .Site.DisqusShortname }}
+    <section id="comments">
+        <hr class="my-8">
+
+        {{ partial "disqus.html" . }}
+    </section>
+    {{ end }}
+</article>
+{{ end }}

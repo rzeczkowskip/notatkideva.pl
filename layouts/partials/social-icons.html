@@ -1,0 +1,10 @@
+<ul class="flex text-lg">
+    {{ range $socialKey,$socialData := sort .Site.Data.social "order" "asc" }}
+    <li class="pr-2">
+        <a href="{{ .url }}"
+           class="transition block opacity-75 hover:opacity-100">
+            {{ .icon | safeHTML }}
+        </a>
+    </li>
+    {{ end }}
+</ul>
