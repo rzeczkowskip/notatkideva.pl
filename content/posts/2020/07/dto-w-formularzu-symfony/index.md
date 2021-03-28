@@ -2,7 +2,7 @@
 title: DTO w formularzu Symfony
 date: 2020-07-14
 tags: [php, symfony, dto, formularz, doctrine]
-categories: [php, programowanie]
+categories: [symfony]
 draft: false
 summary: >-
     Budujesz swój pierwszy formularz w Symfony. Co robisz? Zaglądasz do dokumentacji! Ale może jest lepszy sposób, 

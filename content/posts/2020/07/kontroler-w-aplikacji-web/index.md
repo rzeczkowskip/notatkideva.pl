@@ -2,7 +2,7 @@
 title: Kontroler w aplikacji web – czyli o akcjach i requestach
 date: 2020-07-24
 tags: [adr, best practices,di, mvp, srp, web]
-categories: [programowanie]
+categories: [architektura]
 draft: false
 summary: >-
     Co ma robić kontroler w aplikacji web? Takie podstawowe zadanie. Czym powinien się zajmować? Powinien zwrócić

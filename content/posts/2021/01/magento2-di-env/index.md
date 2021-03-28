@@ -2,7 +2,7 @@
 title: Magento 2, DI i env vars
 date: 2021-01-11
 tags: [php, di, ecommerce, env, magento]
-categories: [magento, php, programowanie]
+categories: [magento]
 draft: false
 summary: >- 
     Jakiś czas temu walczyłem z integracją zewnętrznej biblioteki w Magento 2. Konieczne było

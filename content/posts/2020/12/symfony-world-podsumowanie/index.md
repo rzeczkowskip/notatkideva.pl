@@ -2,7 +2,7 @@
 title: 'SymfonyWorld 2020: podsumowanie'
 date: 2020-12-15
 tags: [php, symfony, symfony world 2020, symfonycon]
-categories: [konferencje, php]
+categories: [konferencje, symfony]
 draft: false
 summary: >-
     Kilka słów podsumowujących konferencję Symfony World 2020. Krótko o wybranych prelekcjach, odbiorze i organizacji.

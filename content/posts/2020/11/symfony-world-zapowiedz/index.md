@@ -2,7 +2,7 @@
 title: 'SymfonyWorld 2020: zapowiedź'
 date: 2020-11-13
 tags: [php, symfony, symfony world 2020, symfonycon]
-categories: [konferencje, php]
+categories: [konferencje, symfony]
 draft: false
 summary: >-
     1 grudnia 2020 rozpocznie się konferencja SymfonyWorld 2020 - czyli SymfonyCon online. Pierwsze 2 dni należą do

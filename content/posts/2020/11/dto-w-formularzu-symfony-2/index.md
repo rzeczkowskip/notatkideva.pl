@@ -2,7 +2,7 @@
 title: DTO w formularzu Symfony - część 2
 date: 2020-11-29
 tags: [php, symfony, dto, formularz, doctrine]
-categories: [php, programowanie]
+categories: [symfony]
 draft: false
 summary: >-
     Chcę ponownie poruszyć temat używania DTO do obsługi formularzy w Symfony. Okazuje się, że można kilka spraw

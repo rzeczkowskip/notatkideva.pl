@@ -2,7 +2,7 @@
 title: Automatyzacja obsługi zamówienia w e-commerce
 date: 2020-11-21
 tags: [case study, ecommerce, integracja]
-categories: [e-commerce, programowanie]
+categories: [case study, architektura]
 draft: false
 summary: >-
    Automatyzacja obsługi zamówienia. W skrócie: oddelegowanie wszystkich czynności, które mogą sprawić problem lub

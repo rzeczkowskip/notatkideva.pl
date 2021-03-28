@@ -2,7 +2,7 @@
 title: Repozytorium Doctrine pomijając EntityRepository
 date: 2020-07-04
 tags: [doctrine, orm, php, symfony]
-categories: [php, programowanie]
+categories: [symfony, architektura]
 draft: false
 summary: 'Moje wypracowane praktyki, których używam przy pracy z repozytorium Doctrine'
 ---
