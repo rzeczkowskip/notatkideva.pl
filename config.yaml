@@ -36,6 +36,11 @@ related:
     threshold: 80
     toLower: false
 
+privacy:
+    googleAnalytics:
+        anonymizeIP: true
+        respectDoNotTrack: true
+
 permalinks:
     /: '/:slug'
     posts: '/:year/:month/:slug'

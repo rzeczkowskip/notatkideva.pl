@@ -34,7 +34,7 @@
   {{ end }}
 
   {{ partial "head-meta.html" . }}
-  {{ partialCached "google-tag-manager.html" . }}
+  {{- template "_internal/google_analytics_async.html" . -}}
 </head>
 <body>
 
@@ -66,9 +66,10 @@
   </button>
   <ul class="sm:flex uppercase items-center justify-center hidden border-t border-b border-gray-300" data-toggle-target="toggle">
     {{ partial "site-navigation-item.html" (dict "url" .Site.Home.RelPermalink "title" "Blog") }}
-    {{ partial "site-navigation-item.html" (dict "url" (.Site.GetPage "categories/php").RelPermalink "title" "PHP") }}
+    {{ partial "site-navigation-item.html" (dict "url" (.Site.GetPage "categories/symfony").RelPermalink "title" "Symfony") }}
     {{ partial "site-navigation-item.html" (dict "url" (.Site.GetPage "categories/magento").RelPermalink "title" "Magento") }}
-    {{ partial "site-navigation-item.html" (dict "url" (.Site.GetPage "categories/programowanie").RelPermalink "title" "Programowanie") }}
+    {{ partial "site-navigation-item.html" (dict "url" (.Site.GetPage "categories/architektura").RelPermalink "title" "Architektura") }}
+    {{ partial "site-navigation-item.html" (dict "url" (.Site.GetPage "categories/case-study").RelPermalink "title" "Case study") }}
     {{ partial "site-navigation-item.html" (dict "url" (.Site.GetPage "o-mnie").RelPermalink "title" "O mnie") }}
   </ul>
 </nav>
