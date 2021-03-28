@@ -29,19 +29,3 @@
     font-weight: 600;
     text-rendering: optimizeLegibility;
 }
-
-@font-face {
-    font-family: 'Lato2';
-    src: url('./lato/fonts/LatoLatin-Bold.woff') format('woff');
-    font-style: normal;
-    font-weight: 700;
-    text-rendering: optimizeLegibility;
-}
-
-@font-face {
-    font-family: 'Lato2';
-    src: url('./lato/fonts/LatoLatin-BoldItalic.woff') format('woff');
-    font-style: italic;
-    font-weight: 700;
-    text-rendering: optimizeLegibility;
-}

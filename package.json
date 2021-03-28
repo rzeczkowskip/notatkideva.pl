@@ -23,9 +23,7 @@
   "private": true,
   "scripts": {
     "dev-server": "encore dev-server",
-    "dev": "encore dev",
-    "build": "NODE_ENV=production encore production --progress",
-    "watch": "encore dev --watch"
+    "build": "NODE_ENV=production encore production --progress"
   },
   "dependencies": {
     "@symfony/stimulus-bridge": "^1.1.0",
