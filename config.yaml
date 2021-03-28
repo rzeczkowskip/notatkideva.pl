@@ -22,6 +22,20 @@ markup:
 
 paginate: 5
 
+related:
+    includeNewer: true
+    indices:
+        - name: series
+          weight: 200
+        - name: categories
+          weight: 50
+        - name: tags
+          weight: 100
+        - name: date
+          weight: 10
+    threshold: 80
+    toLower: false
+
 permalinks:
     /: '/:slug'
     posts: '/:year/:month/:slug'
