@@ -27,24 +27,24 @@
         </div>
     </section>
 
-    {{ $related := (.Site.RegularPages.Related .) }}
-    {{ if gt (len $related) 1 }}
-    <section id="related">
-        <hr class="my-16">
-
-        <h2 class="text-2xl font-bold my-8">Zobacz również</h2>
-
-        {{ range $related | first 3 }}
-            {{ partial "summary.html" . }}
-        {{ end }}
-    </section>
-    {{ end }}
-
     {{ if .Site.DisqusShortname }}
     <section id="comments">
         <hr class="my-8">
 
         {{ partial "disqus.html" . }}
+    </section>
+    {{ end }}
+
+    {{ $related := (.Site.RegularPages.Related .) }}
+    {{ if gt (len $related) 1 }}
+    <section id="related">
+        <hr class="my-8">
+
+        <h2 class="text-2xl font-bold my-8">Zobacz również</h2>
+
+        {{ range $related | first 3 }}
+        {{ partial "summary.html" . }}
+        {{ end }}
     </section>
     {{ end }}
 </article>
