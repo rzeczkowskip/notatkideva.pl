@@ -1,26 +1,6 @@
-{{ with .Params.categories }}
-    {{ range first 1 . }}
-        {{ $term := . }}
-        {{ with $.Site.GetPage (printf "/%s/%s" "categories" $term) }}
-            <div class="mr-4 no-markup">
-                <a href="{{ .RelPermalink }}"
-                   class="hover:underline no-underline text-current uppercase font-bold flex items-center">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                         stroke="currentColor" class="h-4 mr-1">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                              d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z"/>
-                    </svg>
-                    {{ .Title }}
-                </a>
-            </div>
-        {{ end }}
-    {{ end }}
-{{ end }}
-
-<div class="flex mt-2 lg:mt-0 no-markup">
-    <div class="flex items-center mr-4">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
-             class="h-4 mr-1">
+<div class="d-flex small align-items-center">
+    <div class="d-flex me-2 align-items-center">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="sh-3 me-1">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                   d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
         </svg>
@@ -29,22 +9,12 @@
         </time>
     </div>
 
-    <div class="flex items-center mr-4">
+    <div class="d-flex me-2 align-items-center">
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
-             class="h-4 mr-1">
+             class="sh-3 me-1">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                   d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
         </svg>
         {{ .ReadingTime}} min
     </div>
-
-    <a href="{{ .RelPermalink }}#comments"
-       class="hidden sm:flex hover:underline no-underline text-current whitespace-no-wrap items-center">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
-             class="h-4 mr-1">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                  d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"/>
-        </svg>
-        komentarze
-    </a>
 </div>

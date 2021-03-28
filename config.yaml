@@ -7,7 +7,7 @@ sectionPagesMenu: ''
 disqusShortname: 'notatkideva'
 googleAnalytics: 'UA-8284530-15'
 
-disableKinds: [section, taxonomy]
+disableKinds: []
 ignoreErrors: ["error-disable-taxonomy"]
 
 params:
@@ -21,6 +21,7 @@ markup:
         noClasses: false
 
 paginate: 5
+removePathAccents: true
 
 related:
     includeNewer: true

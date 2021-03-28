@@ -7,16 +7,16 @@
     {{ $isLink = true }}
 {{ end }}
 
-{{ $imgHtml := (printf "<img src=\"%s\" alt=\"%s\">" $imgLink $alt) }}
+{{ $imgHtml := (printf "<img src=\"%s\" alt=\"%s\" class=\"img-fluid mx-auto d-block\">" $imgLink $alt) }}
 
 {{ if $isLink }}
     {{ $imgHtml = (printf "<a target=\"blank\" href=\"%s\">%s</a>" $imgLink $imgHtml) }}
 {{ end }}
 
 {{ if .Title }}
-<figure>
+<figure class="figure d-block mx-auto my-2">
     {{ $imgHtml | safeHTML }}
-    <figcaption class="text-center">
+    <figcaption class="figure-caption text-center">
         {{ .Title }}
     </figcaption>
 </figure>

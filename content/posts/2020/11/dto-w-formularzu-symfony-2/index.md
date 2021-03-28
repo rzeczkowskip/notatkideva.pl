@@ -7,7 +7,6 @@ draft: false
 summary: >-
     Chcę ponownie poruszyć temat używania DTO do obsługi formularzy w Symfony. Okazuje się, że można kilka spraw
     doprecyzować. Format wpisu będzie odrobinę inny. Postaram skupić się na konkretnych przypadkach użycia i je opisać.
-image: dto-sf-form.jpg
 ---
 
 Chcę ponownie poruszyć temat używania DTO do obsługi formularzy w Symfony. Okazuje się, że można kilka spraw

@@ -1,87 +1,24 @@
-<footer class="bg-gray-800 text-white px-6 pt-16 pb-6">
-  <div class="container mx-auto">
-    <div class="flex flex-wrap md:text-left text-center order-first -mx-6">
-      <div class="lg:w-1/3 md:w-1/2 w-full px-6 mb-4">
-        <section class="mb-8 pb-8 widget_text" id="text-9">
-            <p class="mb-4">
-              <img class="block rounded-full max-w-full h-auto mx-auto my-4" src="{{ ((resources.Get "/images/me-zoomed.jpg").Resize "200x q100").RelPermalink }}" alt="">
-            </p>
-            <p class="mb-4 text-center font-bold">Piotr &ndash; Notatki Deva</p>
-
-            <div class="flex justify-center my-4">
-              {{ partial "social-icons.html" . }}
-            </div>
+<footer class="bg-footer text-white pb-3 pt-5">
+    <div class="container">
+        <section class="text-center">
+            <img class="mb-3 img-fluid d-block mx-auto rounded" src="{{ ((resources.Get "/images/me-zoomed.jpg").Resize
+            "200x q100").RelPermalink }}" alt="">
 
             <p>
-              Od kiedy pamiętam, interesowałem się IT i całą otoczką webdev. Od kilku lat spełniam się zawodowo jako
-              programista. Pamiętam czasy Pajączka, programu WebMajster (hosting na republika.pl, ktoś kojarzy?), a
-              nawet tworzenia stron WWW w Wordzie :-)
-              <a class="text-link hover:underline" href="{{ (.GetPage "o-mnie").RelPermalink }}">Więcej o mnie</a>
+                To ja. Dev. A tu więcej <a class="text-reset" href="{{ (.GetPage "o-mnie").RelPermalink }}">o
+                mnie</a>.
             </p>
-        </section>
-      </div>
 
-      <div class="lg:w-1/3 md:w-1/2 w-full px-6 mb-4">
-        <section class="mb-8 pb-8">
-          <p class="title-font font-bold tracking-wide mb-3 uppercase text-white">Najnowsze wpisy</p>
-          <ul class="list-none">
-            {{ range first 5 (.Site.GetPage "section" "posts").Pages }}
-            <li class="border-white border-opacity-50 border-b py-4 last:border-b-0 last:pb-0 flex">
-              <div class="w-24 h-12 pr-4 flex-shrink-0 flex-grow-0 overflow-hidden">
-                {{ $featuredImage := partial "func/GetFeaturedImage.html" . }}
-                {{ if $featuredImage }}
-                <a href="{{ .RelPermalink }}" class="block h-full w-full bg-center bg-no-repeat bg-cover" style="background-image: url({{ ($featuredImage.Resize "420x").RelPermalink }})" title="{{ .Title }}">
-                <span class="sr-only">{{ .Title }}</span>
-                </a>
-                {{ end }}
-              </div>
-
-              <a href="{{ .RelPermalink }}">{{ .Title }}</a>
-            </li>
-            {{ end }}
-          </ul>
-        </section>
-      </div>
-
-      <div class="lg:w-1/3 w-full px-6 mb-4">
-        <section class="mb-8 pb-8">
-          <p class="title-font font-bold tracking-wide mb-3 uppercase text-white">Tagi</p>
-
-          <ul class="flex flex-wrap list-none">
-            {{ range $.Site.Taxonomies.tags.ByCount }}
-              {{ $term := . }}
-              {{ with $.Site.GetPage (printf "/%s/%s" "tags" $term.Term) }}
-              <li class="last:mr-0 mr-1 mb-1">
-                <a href="{{ .RelPermalink }}" class="text-sm block py-1 px-2 text-white bg-gray-500 hover:bg-opacity-100 hover:bg-lead-base hover:no-underline rounded">
-                  {{ .Title }}
-                </a>
-              </li>
-              {{ end }}
-            {{ end }}
-          </ul>
+            <div class="fs-3 mt-5">
+                {{ partial "social-icons.html" . }}
+            </div>
         </section>
 
-        <section class="mb-8 pb-8">
-          <p class="title-font font-bold tracking-wide mb-3 uppercase text-white">Kategorie</p>
-
-          <ul class="list-none">
-            {{ range $.Site.Taxonomies.categories }}
-              <li class="border-white border-opacity-50 border-b py-4 last:border-b-0 last:pb-0">
-                <a href="{{ .Page.RelPermalink }}">{{ .Page.Title }}</a>
-              </li>
-            {{ end }}
-          </ul>
-        </section>
-      </div>
+        <div class="text-center small mt-5">
+            <p class="mb-0">
+                Copyright &copy;
+                <a class="text-reset" href="{{ .Site.Home.RelPermalink }}">{{ .Site.Title }}</a>
+            </p>
+        </div>
     </div>
-
-    <div class="text-center mt-6 pt-6">
-      <p class="text-sm">
-        Copyright &copy;
-        <a class="text-link hover:underline" href="{{ .Site.Home.RelPermalink }}">{{ .Site.Title }}</a>
-      </p>
-
-
-    </div>
-  </div>
 </footer>

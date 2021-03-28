@@ -8,8 +8,7 @@ summary: >-
     Jakiś czas temu walczyłem z integracją zewnętrznej biblioteki w Magento 2. Konieczne było
     podanie danych API w konstruktorze, więc stwierdziłem, że zmienne środowiskowe (env vars) idealnie się nadadzą. DI
     Magento na to pozwala. Przynajmniej w teorii… No dobra, nie w teorii, bo już korzystałem z tej metody. Problem z
-    integracją… 
-image: mage-di.jpg
+    integracją…
 ---
 
 Jakiś czas temu walczyłem z integracją zewnętrznej biblioteki w Magento 2. Konieczne było podanie danych API w

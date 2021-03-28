@@ -1,0 +1,17 @@
+{{ define "main" }}
+<h1 class="text-center my-5">
+    {{ .Title }}
+</h1>
+
+{{ $taxonomy := .Data.Plural }}
+<ul class="list-group list-group-flush">
+    {{ range .Data.Terms.Alphabetical }}
+        {{ with $.Site.GetPage (printf "/%s/%s" $taxonomy (.Name | urlize)) }}
+            <li class="list-group-item">
+                <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+            </li>
+        {{ end }}
+    {{ end }}
+</ul>
+
+{{ end }}

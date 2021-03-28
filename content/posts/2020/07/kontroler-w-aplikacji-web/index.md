@@ -8,7 +8,6 @@ summary: >-
     Co ma robić kontroler w aplikacji web? Takie podstawowe zadanie. Czym powinien się zajmować? Powinien zwrócić
     odpowiedź na zapytanie (request to response... Jakoś dziwnie mi to brzmi po polsku). Ma być prostą warstwą łączącą
     framework, z którego korzystasz, z Twoim kodem.
-image: cogs.jpg
 ---
 
 Co ma robić kontroler w aplikacji web? Takie podstawowe zadanie. Czym powinien się zajmować? Powinien zwrócić odpowiedź

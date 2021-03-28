@@ -7,7 +7,6 @@ draft: false
 summary: >-
     Budujesz swój pierwszy formularz w Symfony. Co robisz? Zaglądasz do dokumentacji! Ale może jest lepszy sposób, 
     niż ten opisany w dokumentacji?
-image: dto-sf-form.jpg
 ---
 
 Budujesz swój pierwszy formularz w Symfony. Co robisz? Zaglądasz do dokumentacji! Dostajesz cały proces opisany krok po

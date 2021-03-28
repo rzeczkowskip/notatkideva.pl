@@ -23,6 +23,7 @@ Encore
     options.fileName = `../../data/${manifestFileName}`;
   })
 
+  .enableSassLoader()
   .enablePostCssLoader()
 
   .addPlugin(new ESLintWebpackPlugin())
@@ -30,11 +31,11 @@ Encore
   .enableIntegrityHashes(Encore.isProduction())
 
   .addEntry('app', './assets/src/app.js')
-  // .copyFiles({
-  //   from: './assets/src/images',
-  //   to: Encore.isProduction() ? 'images/[path][name].[hash:8].[ext]' : 'images/[path][name].[ext]',
-  //   pattern: /\.(png|jpe?g|gif|svg)$/,
-  // })
+// .copyFiles({
+//   from: './assets/src/images',
+//   to: Encore.isProduction() ? 'images/[path][name].[hash:8].[ext]' : 'images/[path][name].[ext]',
+//   pattern: /\.(png|jpe?g|gif|svg)$/,
+// })
 ;
 
 Encore.configureWatchOptions((watchOptions) => {

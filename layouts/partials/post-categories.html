@@ -1,0 +1,9 @@
+{{ $last :=  index (last 1 .Params.categories) 0 }}
+{{ with .Params.categories }}
+    {{ range . }}
+        {{ $term := . }}
+        {{ with $.Site.GetPage (printf "/%s/%s" "categories" ($term | urlize)) }}
+            <a href="{{ .RelPermalink }}">{{ .Title }}</a>{{ if ne $term $last }},{{ end }}
+        {{ end }}
+    {{ end }}
+{{ end }}

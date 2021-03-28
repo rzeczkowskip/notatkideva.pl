@@ -1,82 +1,81 @@
 <!doctype html>
-<html lang="{{ $.Site.LanguageCode | default "pl" }}">
+<html lang="{{ $.Site.LanguageCode | default " pl" }}">
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  {{/* NOTE: the Site's title, and if there is a page title, that is set too */}}
-  <title>{{ block "title" . }}{{ with .Params.Title }}{{ . }} | {{ end }}{{ .Site.Title }}{{ end }}</title>
-  <meta name="viewport" content="width=device-width,minimum-scale=1">
-  <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{if .IsPage}}{{ .Summary }}{{ else }}{{ with .Site.Params.description }}{{ . }}{{ end }}{{ end }}{{ end }}">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    {{/* NOTE: the Site's title, and if there is a page title, that is set too */}}
+    <title>{{ block "title" . }}{{ with .Params.Title }}{{ . }} | {{ end }}{{ .Site.Title }}{{ end }}</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{if .IsPage}}{{ .Summary }}{{ else }}{{ with .Site.Params.description }}{{ . }}{{ end }}{{ end }}{{ end }}">
 
-  {{ if eq (getenv "HUGO_ENV") "production" | or (eq .Site.Params.env "production")  }}
-  <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
-  {{ else }}
-  <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
-  {{ end }}
+    {{ if eq (getenv "HUGO_ENV") "production" | or (eq .Site.Params.env "production") }}
+    <meta name="robots" content="index,follow">
+    {{ else }}
+    <meta name="robots" content="noindex,nofollow">
+    {{ end }}
 
-  {{ $manifest := .Site.Data.manifest_dev }}
-  {{ if not $manifest }}
+    {{ $manifest := .Site.Data.manifest_dev }}
+    {{ if not $manifest }}
     {{ $manifest = .Site.Data.manifest }}
-  {{ end }}
-  <link rel="stylesheet" href="{{ index $manifest "dist/app.css" }}">
-  <script src="{{ index $manifest "dist/app.js" }}" defer></script>
+    {{ end }}
+    <link rel="stylesheet" href="{{ index $manifest "dist/app.css" }}">
+    <script src="{{ index $manifest "dist/app.js" }}" defer></script>
 
-  <link rel="icon" href="{{ "/favicon.png" | absURL }}" sizes="32x32" />
-  <link rel="icon" href="{{ "/favicon-192.png" | absURL }}" sizes="192x192" />
-  <link rel="apple-touch-icon" href="{{ "/favicon-180.png" | absURL }}" />
-  <meta name="msapplication-TileImage" content="{{ "/favicon-270.png" | absURL }}" />
+    <link rel="icon" href="{{ "/favicon.png" | absURL }}" sizes="32x32" />
+    <link rel="icon" href="{{ "/favicon-192.png" | absURL }}" sizes="192x192" />
+    <link rel="apple-touch-icon" href="{{ "/favicon-180.png" | absURL }}" />
+    <meta name="msapplication-TileImage" content="{{ "/favicon-270.png" | absURL }}" />
 
-  {{ if .OutputFormats.Get "RSS" }}
-  {{ with .OutputFormats.Get "RSS" }}
-  <link href="{{ .RelPermalink }}" rel="alternate" type="application/rss+xml" title="{{ $.Site.Title }}" />
-  <link href="{{ .RelPermalink }}" rel="feed" type="application/rss+xml" title="{{ $.Site.Title }}" />
-  {{ end }}
-  {{ end }}
+    {{ if .OutputFormats.Get "RSS" }}
+    {{ with .OutputFormats.Get "RSS" }}
+    <link href="{{ .RelPermalink }}" rel="alternate" type="application/rss+xml" title="{{ $.Site.Title }}"/>
+    <link href="{{ .RelPermalink }}" rel="feed" type="application/rss+xml" title="{{ $.Site.Title }}"/>
+    {{ end }}
+    {{ end }}
 
-  {{ partial "head-meta.html" . }}
-  {{- template "_internal/google_analytics_async.html" . -}}
+    {{ partial "head-meta.html" . }}
+    {{- template "_internal/google_analytics_async.html" . -}}
 </head>
 <body>
+<div class="container">
+    <header class="py-3">
+        <div class="brand">
+            <a href="{{ .Site.Home.RelPermalink }}" title="{{ .Site.Title }}" class="d-flex align-items-center text-decoration-none text-reset">
+                <img src="{{ "/images/logo.svg" | relURL }}" alt="{{ .Site.Title }}">
+                <span class="ps-4">
+                    <span class="d-block fw-semibold brand-lead lh-1 fw-bold">
+                        {{ .Site.Title }}
+                    </span>
+                    <span class="small text-muted text-lowercase brand-sub">
+                        <span class="hidden d-sm-inline">//</span> {{ .Site.Params.Subtitle }}
+                    </span>
+                </span>
+            </a>
+        </div>
+    </header>
 
-<header class="my-12 container">
-  <div class="flex justify-between items-center">
-    <a href="{{ .Site.Home.RelPermalink }}" class="flex items-center" title="{{ .Site.Title }}">
-      <img src="{{ "/images/logo.svg" | relURL }}" alt="{{ .Site.Title }}" class="h-20 sm:h-24 block mx-auto">
-      <span class="block pl-6">
-        <span class="block text-3xl sm:text-5xl font-bold">
-          {{ .Site.Title }}
-        </span>
-        <span class="sm:text-xl text-gray-500 lowercase">
-          <span class="hidden sm:inline">//</span> {{ .Site.Params.Subtitle }}
-        </span>
-      </span>
-    </a>
-    <div class="pl-2 hidden sm:block">
-      {{ partial "social-icons.html" . }}
-    </div>
-  </div>
-</header>
+    <nav class="navbar navbar-expand-sm navbar-light bg-light mb-5">
+        <div class="container-fluid">
+            <button class="navbar-toggler me-0 ms-auto" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    {{ partial "site-navigation-item.html" (dict "url" .Site.Home.RelPermalink "title" "Blog") }}
+                    {{ partial "site-navigation-item.html" (dict "url" (.Site.GetPage "categories").RelPermalink "title" "Kategorie") }}
+                    {{ partial "site-navigation-item.html" (dict "url" (.Site.GetPage "tags").RelPermalink "title" "Tagi") }}
+                    {{ partial "site-navigation-item.html" (dict "url" (.Site.GetPage "o-mnie").RelPermalink "title" "O mnie") }}
+                </ul>
+            </div>
+        </div>
+    </nav>
 
-<nav class="container my-8 leading-none" data-controller="toggle">
-  <button class="p-2 ml-2 sm:hidden flex items-center mr-0 ml-auto" data-action="click->toggle#toggle touch->toggle#toggle">
-    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="h-6">
-      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-    </svg>
-    <span class="font-bold block pl-1">MENU</span>
-  </button>
-  <ul class="sm:flex uppercase items-center justify-center hidden border-t border-b border-gray-300" data-toggle-target="toggle">
-    {{ partial "site-navigation-item.html" (dict "url" .Site.Home.RelPermalink "title" "Blog") }}
-    {{ partial "site-navigation-item.html" (dict "url" (.Site.GetPage "categories/symfony").RelPermalink "title" "Symfony") }}
-    {{ partial "site-navigation-item.html" (dict "url" (.Site.GetPage "categories/magento").RelPermalink "title" "Magento") }}
-    {{ partial "site-navigation-item.html" (dict "url" (.Site.GetPage "categories/architektura").RelPermalink "title" "Architektura") }}
-    {{ partial "site-navigation-item.html" (dict "url" (.Site.GetPage "categories/case-study").RelPermalink "title" "Case study") }}
-    {{ partial "site-navigation-item.html" (dict "url" (.Site.GetPage "o-mnie").RelPermalink "title" "O mnie") }}
-  </ul>
-</nav>
-
-<main class="container mt-16 mb-32 mx-auto">
-  {{ block "main" . }}{{ end }}
-</main>
+    <main class="my-5">
+        {{ block "main" . }}{{ end }}
+    </main>
+</div>
 
 {{ block "footer" . }}{{ partialCached "site-footer.html" . }}{{ end }}
 </body>

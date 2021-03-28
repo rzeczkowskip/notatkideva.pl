@@ -2,15 +2,11 @@
   "entrypoints": {
     "app": {
       "css": [
-        "/dist/app.78bc094f.css"
+        "http://localhost:1314/dist/app.css"
       ],
       "js": [
-        "/dist/app.62ea69cd.js"
+        "http://localhost:1314/dist/app.js"
       ]
     }
-  },
-  "integrity": {
-    "/dist/app.78bc094f.css": "sha384-bnshhDtewxbPg3HL7bumNwLMvYSpkgQTG2Bpuh0WaSGMhsEYGJz8ClYDPk3MxU4e",
-    "/dist/app.62ea69cd.js": "sha384-F62ymPH85cTeHj4YjoWgKzMRXHSksjVYFFRqJqaPFLXSsPWzSllgUAYQA9e4btyU"
   }
 }

@@ -4,4 +4,4 @@
     {{ $level = 6 }}
 {{ end }}
 
-<h{{ $level }} id="{{ .Anchor | safeURL }}">{{ .Text | safeHTML }} <a href="#{{ .Anchor | safeURL }}" class="permalink">#</a></h{{ $level }}>
+<h{{ $level }} id="{{ .Anchor | safeURL }}">{{ .Text | safeHTML }} <a href="#{{ .Anchor | safeURL }}" class="permalink" title="{{ .Text | safeHTMLAttr }}">#</a></h{{ $level }}>

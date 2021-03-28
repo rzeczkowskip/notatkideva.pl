@@ -1,30 +1,10 @@
-{{ $thumbnailWidth := 420 }}
+<article class="mb-5">
+  {{ .Scratch.Set "post-list" true }}
+  {{ partial "post-header.html" . }}
 
-{{ $featuredImage := partial "func/GetFeaturedImage.html" . }}
-<article class="mb-8 sm:mb-16 sm:flex">
-  <div class="w-24 sm:w-48 md:w-56 h-12 sm:h-24 md:h-28 pr-4 flex-shrink-0 flex-grow-0 overflow-hidden mb-4 sm:mb-0 {{ if not $featuredImage }}hidden sm:block{{ end }}">
-    {{ if $featuredImage }}
-    <a href="{{ .RelPermalink }}" class="block h-full w-full bg-center bg-no-repeat bg-cover" style="background-image: url({{ ($featuredImage.Resize "420x").RelPermalink }})" title="{{ .Title }}">
-      <span class="sr-only">{{ .Title }}</span>
-    </a>
-    {{ end }}
-  </div>
-
-  <div class="flex-grow">
-    <h1 class="leading-none md:text-2xl break-words text-xl mb-2">
-      <a href="{{ .RelPermalink }}" class="block font-bold hover:underline">
-        {{ .Title }}
-      </a>
-    </h1>
-
-    <div class="mb-4 text-xs lg:flex whitespace-no-wrap text-black">
-      {{ partial "post-meta.html" . }}
-    </div>
-
-    <div class="hidden sm:block">
-      <p class="prose inline leading-normal">
-        {{ .Summary }}
-      </p>
-    </div>
+  <div class="markup">
+    <p>
+      {{ .Summary }} [...]
+    </p>
   </div>
 </article>

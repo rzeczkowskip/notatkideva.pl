@@ -1,0 +1,32 @@
+{{ $featuredImage := partial "func/GetFeaturedImage.html" . }}
+
+<h1 class="text-break mb-2 {{ if (.Scratch.Get "post-list") }}h3{{ end }}">
+    {{ if (.Scratch.Get "post-list") }}
+    <a href="{{ .RelPermalink }}" class="text-reset text-decoration-none">
+        {{ .Title }}
+    </a>
+    {{ else }}
+        {{ .Title }}
+    {{ end }}
+</h1>
+
+{{ if eq .Type "posts" }}
+<div class="my-2">
+    {{ partial "post-meta.html" . }}
+</div>
+{{ end }}
+
+{{ if $featuredImage }}
+<div class="mb-2">
+    {{ if (.Scratch.Get "post-list") }}
+        <a href="{{ .RelPermalink }}" class="d-block" title="{{ .Title }}">
+    {{ end }}
+
+    <img class="img-fluid d-block mx-auto" src="{{ ($featuredImage.Resize "640x").RelPermalink }}" alt="{{ .Title | safeHTMLAttr }}">
+
+    {{ if (.Scratch.Get "post-list") }}
+        </a>
+    {{ end }}
+
+</div>
+{{ end }}

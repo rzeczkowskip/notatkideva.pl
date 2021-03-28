@@ -1,0 +1,10 @@
+{{ with .Params.tags }}
+    {{ range . }}
+        {{ $term := . }}
+        {{ with $.Site.GetPage (printf "/%s/%s" "tags" ($term | urlize)) }}
+            <a href="{{ .RelPermalink }}" class="text-lowercase badge bg-secondary text-white">
+                {{ .Title }}
+            </a>
+        {{ end }}
+    {{ end }}
+{{ end }}
