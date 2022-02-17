@@ -11,7 +11,7 @@ ignoreErrors: ["error-disable-taxonomy"]
 
 params:
     subtitle: 'Trochę kodu, trochę gadania'
-    cloudflareAnalytics: '307a68b4bef447c3be942ec5310598eb'
+    cloudflareAnalytics: '851dedc44ffb4d81b752da8eacff79d3'
 
 markup:
     goldmark:
