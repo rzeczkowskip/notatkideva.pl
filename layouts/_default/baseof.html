@@ -34,7 +34,7 @@
     {{ end }}
 
     {{ partial "head-meta.html" . }}
-    {{- template "_internal/google_analytics_async.html" . -}}
+    {{ partial "analytics.html" . }}
 </head>
 <body>
 <div class="container">
