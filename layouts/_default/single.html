@@ -1,32 +1,53 @@
 {{ define "main" }}
-
-<article>
-    <div class="fixed h-1 w-0 left-0 top-0 z-50 bg-lead-base" data-post-progress></div>
-
-    {{ .Scratch.Delete "post-list" }}
-    {{ partial "post-header.html" . }}
-
-    <div class="mt-4 markup">
-        {{ .Content }}
-    </div>
-
-    {{ if eq .Type "posts" }}
-        <section class="my-3">
-            <div class="mb-2">
-                Tagi: {{- partial "post-tags.html" . -}}
-            </div>
-            <div>
-                Kategorie: {{- partial "post-categories.html" . -}}
-            </div>
-        </section>
-
-        {{ if .Site.DisqusShortname }}
-        <section id="comments" class="my-3">
-            <hr class="my-5">
-
-            {{ partial "disqus.html" . }}
-        </section>
-        {{ end }}
+<article class="article">
+    {{ if and (eq .Type "posts") (eq .Kind "page") }}
+    <div class="post-progress" data-post-progress></div>
     {{ end }}
+
+    <div class="container">
+        {{ $featuredImage := partial "func/GetFeaturedImage.html" . }}
+        {{ if $featuredImage }}
+        <div class="article-hero">
+            <a href="{{ .RelPermalink }}" title="{{ .Title }}">
+                <img src="{{ ($featuredImage.Resize "1116x").RelPermalink }}" alt="{{ .Title | safeHTMLAttr }}">
+            </a>
+        </div>
+        {{ end }}
+
+        <div class="markup-container">
+            <div class="markup">
+                {{ .Content }}
+            </div>
+
+            {{ if eq .Type "posts" }}
+            <section class="article-meta">
+                <p class="article-tags">
+                    Tagi: {{- partial "post-tags.html" . -}}
+                </p>
+                <p class="article-categories">
+                    Kategorie: {{- partial "post-categories.html" . -}}
+                </p>
+            </section>
+            {{ end }}
+        </div>
+    </div>
 </article>
+
+{{ if and (eq .Kind "page") (eq .Type "posts") }}
+<div class="container">
+    <section class="article-list-padded article-list">
+        {{ if ne .PrevInSection nil }}
+        <h2 class="article-list-title">Poprzedni artykuł</h2>
+        {{ partial "article-list.html" (slice .PrevInSection) }}
+        {{ end }}
+
+        {{ $related := (.Site.RegularPages.Related .) | complement (slice .PrevInSection) }}
+        {{ if gt (len $related) 0 }}
+        <h2 class="article-list-title">Może Cię zainteresować</h2>
+        {{ partial "article-list.html" (first 3 $related) }}
+        {{ end }}
+    </section>
+</div>
+{{ end }}
+
 {{ end }}

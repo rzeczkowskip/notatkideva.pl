@@ -2,11 +2,14 @@
 
 {{ $pages := where $.Site.RegularPages "Type" "posts" }}
 {{ $paginator := .Paginate $pages }}
-<div class="content-container">
-    {{ range $paginator.Pages }}
-        {{ partial "summary.html" . }}
-    {{ end }}
 
-    {{ partial "pagination.html" . }}
+<div class="main-padded">
+    <div class="container">
+        {{ partial "article-list.html" $paginator.Pages }}
+
+        <div class="article-list">
+            {{ partial "pagination.html" . }}
+        </div>
+    </div>
 </div>
 {{ end }}

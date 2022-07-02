@@ -1,41 +1,38 @@
-document.addEventListener('DOMContentLoaded', () => {
-  const progressBar = document.querySelector('[data-post-progress]');
-  if (!progressBar) {
-    return;
-  }
+const usePostProgress = (selector) => {
+  document.addEventListener('DOMContentLoaded', () => {
+    const progressBar = document.querySelector(selector);
+    if (!progressBar) {
+      return;
+    }
 
-  const articleContainer = progressBar.parentElement;
+    const articleContainer = progressBar.parentElement;
+    let scrollProgressLimit;
 
-  const textContainerPosition = {
-    top: 0,
-    bottom: 0,
-  };
+    const getCurrentProgress = () => {
+      if (!scrollProgressLimit) {
+        return 0;
+      }
 
-  const getCurrentProgress = () => {
-    const scrollPosition = window.scrollY - textContainerPosition.bottom;
+      const position = (window.scrollY * 100) / scrollProgressLimit;
+      return Math.min(Math.max(0, position), 100);
+    };
 
-    const position = (scrollPosition / textContainerPosition.top) * 100;
+    const onScroll = () => {
+      progressBar.style.width = `${getCurrentProgress()}%`;
+    };
 
-    return Math.min(Math.max(0, position), 100);
-  };
+    const recalculateMinMaxPosition = () => {
+      scrollProgressLimit = articleContainer.offsetHeight - articleContainer.offsetTop;
+      onScroll();
+    };
 
-  const onScroll = () => {
-    progressBar.style.width = `${getCurrentProgress()}%`;
-  };
+    window.addEventListener('resize', recalculateMinMaxPosition);
+    window.addEventListener('scroll', onScroll);
+    window.addEventListener('load', recalculateMinMaxPosition);
 
-  const recalculateMinMaxPosition = () => {
-    const articleEndPosition = articleContainer.offsetHeight + articleContainer.offsetTop;
-    const scrollOffset = window.innerHeight * 0.9 + articleContainer.offsetTop;
-
-    textContainerPosition.top = articleContainer.offsetTop;
-    textContainerPosition.end = articleEndPosition - scrollOffset;
-
+    recalculateMinMaxPosition();
     onScroll();
-  };
+  });
+};
 
-  window.addEventListener('resize', recalculateMinMaxPosition);
-  window.addEventListener('scroll', onScroll);
-
-  recalculateMinMaxPosition();
-  onScroll();
-});
+export default usePostProgress;

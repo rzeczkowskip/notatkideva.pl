@@ -1,0 +1,13 @@
+.pagination {
+  margin-top: 3.75rem;
+
+  > ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+  }
+}

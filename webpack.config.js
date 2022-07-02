@@ -44,4 +44,3 @@ Encore.configureWatchOptions((watchOptions) => {
 });
 
 module.exports = Encore.getWebpackConfig();
-

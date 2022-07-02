@@ -1,9 +1,33 @@
-$container-max-widths: (
-    sm: 40rem,
-);
+$font-family-sans-serif: 'Mulish', sans-serif;
 
-$font-family-sans-serif: 'Lato', sans-serif;
+$paragraph-margin-bottom: 1em;
 
-$gray-800: #343a40;
+$white: #fff;
+$gray-800: #1D2939;
+$gray-600: #475467;
+$gray-500: #667085;
+$gray-400: #98A2B3;
+$gray-300: #D0D5DD;
+$gray-200: #E4E7EC;
+$gray-100: #F2F4F7;
+
 $blue: #5577bb;
-$body-color: $gray-800;
+$blue-alt: darken($blue, .8);
+
+$body-bg: $white;
+$body-color: $gray-600;
+$headings-color: $gray-800;
+$text-muted: $gray-500;
+
+$main-bg: $gray-100;
+
+$font-size-sm: 1.125rem;
+
+$link-color: $blue;
+
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1140px,
+) !default;

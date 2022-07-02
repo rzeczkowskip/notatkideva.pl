@@ -1,17 +1,32 @@
 {{ define "main" }}
-<h1 class="text-center my-5">
-    {{ .Title }}
-</h1>
 
-{{ $taxonomy := .Data.Plural }}
-<ul class="list-group list-group-flush">
-    {{ range .Data.Terms.Alphabetical }}
-        {{ with $.Site.GetPage (printf "/%s/%s" $taxonomy (.Name | urlize)) }}
-            <li class="list-group-item">
-                <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+{{ $termsListClass := "terms-list-big" }}
+{{ $termsListBig := 1 }}
+{{ if in (slice "tags") .Type }}
+    {{ $termsListClass = "terms-list-small" }}
+    {{ $termsListBig = 0 }}
+{{ end }}
+
+<div class="main-padded">
+    <div class="markup-container">
+        {{ $taxonomy := .Data.Plural }}
+        <ul class="terms-list {{ $termsListClass }}">
+            {{ range .Data.Terms.Alphabetical }}
+            {{ with $.Site.GetPage (printf "/%s/%s" $taxonomy (.Name | urlize)) }}
+
+            <li class="terms-list-item">
+                {{ if eq $termsListBig 1 }}
+                    <h2 class="article-list-title">
+                        <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+                    </h2>
+                    <a href="{{ .RelPermalink }}" class="btn">Zobacz wpisy</a>
+                {{ else }}
+                    <a href="{{ .RelPermalink }}" class="term-link">{{ .Title }}</a>
+                {{ end }}
             </li>
-        {{ end }}
-    {{ end }}
-</ul>
-
+            {{ end }}
+            {{ end }}
+        </ul>
+    </div>
+</div>
 {{ end }}

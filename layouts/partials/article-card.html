@@ -1,0 +1,30 @@
+{{ $featuredImage := partial "func/GetFeaturedImage.html" . }}
+
+<article class="article-card">
+  <a class="article-card-anchor" href="{{ .RelPermalink }}" title="{{ .Title | safeHTMLAttr }}">
+    <div class="article-card-container">
+      <div class="article-card-text">
+        {{ partial "article-date.html" . }}
+
+        <h1 class="article-card-title">
+          {{ .Title }}
+        </h1>
+
+        <div class="markup">
+          <p>
+            {{ .Summary }} [...]
+          </p>
+        </div>
+      </div>
+
+      {{ if $featuredImage }}
+      <div class="article-card-image">
+        <img
+                src="{{ ($featuredImage.Fill "640x514 center").RelPermalink }}"
+        alt="{{ .Title | safeHTMLAttr }}"
+        >
+      </div>
+      {{ end }}
+    </div>
+  </a>
+</article>

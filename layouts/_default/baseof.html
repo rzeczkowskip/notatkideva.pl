@@ -6,7 +6,7 @@
     {{/* NOTE: the Site's title, and if there is a page title, that is set too */}}
     <title>{{ block "title" . }}{{ with .Params.Title }}{{ . }} | {{ end }}{{ .Site.Title }}{{ end }}</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1">
-    <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{if .IsPage}}{{ .Summary }}{{ else }}{{ with .Site.Params.description }}{{ . }}{{ end }}{{ end }}{{ end }}">
+    <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{if .IsPage}}{{ .Summary }}{{ else }}{{ with .Site.Params.Subtitle }}{{ . }}{{ end }}{{ end }}{{ end }}">
 
     {{ if eq (getenv "HUGO_ENV") "production" | or (eq .Site.Params.env "production") }}
     <meta name="robots" content="index,follow">
@@ -37,45 +37,39 @@
     {{ partial "analytics.html" . }}
 </head>
 <body>
-<div class="container">
-    <header class="py-3">
-        <div class="brand">
-            <a href="{{ .Site.Home.RelPermalink }}" title="{{ .Site.Title }}" class="d-flex align-items-center text-decoration-none text-reset">
-                <img src="{{ "/images/logo.svg" | relURL }}" alt="{{ .Site.Title }}">
-                <span class="ps-4">
-                    <span class="d-block fw-semibold brand-lead lh-1 fw-bold">
-                        {{ .Site.Title }}
-                    </span>
-                    <span class="small text-muted text-lowercase brand-sub">
-                        <span class="hidden d-sm-inline">//</span> {{ .Site.Params.Subtitle }}
-                    </span>
-                </span>
-            </a>
-        </div>
-    </header>
+<header class="header">
+    <a href="{{ .Site.Home.RelPermalink }}" title="{{ .Site.Title }}" class="brand">
+        <img src="{{ "/images/logo.svg" | relURL }}" alt="{{ .Site.Title }}">
+        <span class="brand-text">
+          {{ .Site.Title }}
+        </span>
+    </a>
 
-    <nav class="navbar navbar-expand-sm navbar-light bg-light mb-5">
-        <div class="container-fluid">
-            <button class="navbar-toggler me-0 ms-auto" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
-                    aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
-                    {{ partial "site-navigation-item.html" (dict "url" .Site.Home.RelPermalink "title" "Blog") }}
-                    {{ partial "site-navigation-item.html" (dict "url" (.Site.GetPage "categories").RelPermalink "title" "Kategorie") }}
-                    {{ partial "site-navigation-item.html" (dict "url" (.Site.GetPage "tags").RelPermalink "title" "Tagi") }}
-                    {{ partial "site-navigation-item.html" (dict "url" (.Site.GetPage "o-mnie").RelPermalink "title" "O mnie") }}
-                </ul>
-            </div>
-        </div>
+    <nav class="nav">
+        <ul class="nav-menu">
+            {{ partial "site-navigation-item.html" (dict "url" .Site.Home.RelPermalink "title" "Blog") }}
+            {{ partial "site-navigation-item.html" (dict "url" (.Site.GetPage "categories").RelPermalink "title" "Kategorie") }}
+            {{ partial "site-navigation-item.html" (dict "url" (.Site.GetPage "tags").RelPermalink "title" "Tagi") }}
+            {{ partial "site-navigation-item.html" (dict "url" (.Site.GetPage "o-mnie").RelPermalink "title" "O mnie") }}
+        </ul>
+
+        <button type="button" aria-expanded="false" aria-label="Toggle navigation" id="nav-toggle">
+            <svg width="24" height="15" viewBox="0 0 24 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0 0H24V2.2H0V0Z" fill="#1D2939"/>
+                <path d="M0 6.4H24V8.6H0V6.4Z" fill="#1D2939"/>
+                <path d="M24 12.8H8V15H24V12.8Z" fill="#1D2939"/>
+            </svg>
+        </button>
     </nav>
+</header>
 
-    <main class="my-5">
-        {{ block "main" . }}{{ end }}
-    </main>
-</div>
+{{ block "hero" . }}
+    {{ partial "hero.html" . }}
+{{ end }}
+
+<main class="main">
+    {{ block "main" . }}{{ end }}
+</main>
 
 {{ block "footer" . }}{{ partialCached "site-footer.html" . }}{{ end }}
 </body>

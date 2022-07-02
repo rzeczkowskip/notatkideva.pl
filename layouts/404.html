@@ -1,11 +1,22 @@
 {{ define "main" }}
-<div class="content-container">
-    <h1 class="text-4xl font-bold text-center">
-        Strona nie istnieje
-    </h1>
+    <div class="article">
+        <div class="container">
+            <div class="markup-container">
+                <div class="markup">
+                    <img src="{{ "/images/404.gif" | relURL }}" alt="Nie znaleziono strony">
+                </div>
+            </div>
+        </div>
+    </div>
 
-    <p class="my-6 text-center">Nie wiem skąd masz ten link, ale coś poszło nie tak i nic tu nie ma...</p>
+<div class="container">
+    <section class="article-list article-list-padded">
+        <h2 class="article-list-title">Zobacz ostatnie wpisy</h2>
+        {{ $pages := where $.Site.RegularPages "Type" "posts" }}
+        {{ $paginator := .Paginate $pages }}
 
-    <img src="{{ "/images/404.gif" | relURL }}" alt="Nie znaleziono strony" class="block mx-auto">
+        {{ partial "article-list.html" (first 3 $paginator.Pages) }}
+    </section>
 </div>
+
 {{ end }}

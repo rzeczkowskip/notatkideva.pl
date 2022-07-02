@@ -1,0 +1,42 @@
+.page-hero {
+  padding: 3.75rem 0 3.75rem 0;
+  text-align: center;
+  background-color: $white;
+
+  .page-hero-lead {
+    font-size: 1.75rem;
+    line-height: 1.2;
+    letter-spacing: .03rem;
+    font-weight: 800;
+    margin: 0;
+
+    background: linear-gradient(97.1deg, $gray-600 4.8%, $blue 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+
+    @include media-breakpoint-up('md') {
+      font-size: 2.875rem;
+    }
+
+    @include media-breakpoint-up('lg') {
+      font-size: 4.75rem;
+    }
+
+    & + .page-hero-secondary {
+      margin-top: 1rem;
+    }
+  }
+
+  .page-hero-secondary {
+    font-weight: normal;
+    font-size: 1.125rem;
+    line-height: 1.5;
+    color: $gray-600;
+  }
+
+  .page-hero-article-details {
+    font-size: 0.8125rem;
+  }
+}

@@ -3,7 +3,7 @@
     {{ range . }}
         {{ $term := . }}
         {{ with $.Site.GetPage (printf "/%s/%s" "categories" ($term | urlize)) }}
-            <a href="{{ .RelPermalink }}">{{ .Title }}</a>{{ if ne $term $last }},{{ end }}
+            <a href="{{ .RelPermalink }}" class="term-link">{{ .Title }}</a>{{ if ne $term $last }},{{ end }}
         {{ end }}
     {{ end }}
 {{ end }}

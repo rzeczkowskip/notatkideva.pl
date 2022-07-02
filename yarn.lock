@@ -872,6 +872,11 @@
     minimatch "^3.0.4"
     strip-json-comments "^3.1.1"
 
+"@fontsource/mulish@^4.5.11":
+  version "4.5.11"
+  resolved "https://registry.yarnpkg.com/@fontsource/mulish/-/mulish-4.5.11.tgz#c3449839e38b5b5eacfdf9a4abef32037198d5e5"
+  integrity sha512-7oywPzRLjxT0j746/AWo5HQrmJmt9Sn2IUiSuOq2lkfpVQY9nUBqbNGjVH9QSdx5E9LkxX3g7Y0R9zl+s2SGgg==
+
 "@fullhuman/postcss-purgecss@^4.1.3":
   version "4.1.3"
   resolved "https://registry.yarnpkg.com/@fullhuman/postcss-purgecss/-/postcss-purgecss-4.1.3.tgz#e4eb21fc7a49257e4081c6a3a86b338618e61fce"

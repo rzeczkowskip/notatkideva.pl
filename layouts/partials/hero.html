@@ -1,0 +1,44 @@
+{{ $primary := .Title|default .Site.Title }}
+{{ $secondary := .Site.Params.Subtitle }}
+
+{{ if or (eq .Kind "section") (eq .Kind "home") }}
+    {{ $primary = .Site.Title }}
+{{ else if or (eq .Kind "term") (eq .Kind "taxonomy") }}
+    {{ $secondary = .Params.Description }}
+{{ else if and (eq .Type "posts") (eq .Kind "page") }}
+    {{ $secondary = "" }}
+{{ else if and (eq .Type "page") (eq .Kind "page") }}
+    {{ if ne .Params.Summary nil }}
+        {{ $secondary = .Summary }}
+    {{ else }}
+        {{ $secondary = "" }}
+    {{ end }}
+{{ else if (eq .Kind "404") }}
+    {{ $primary = "Strona nie istnieje"}}
+    {{ $secondary = "Nie wiem skąd masz ten link, ale coś poszło nie tak i nic tu nie ma..." }}
+{{ end }}
+
+<div class="page-hero">
+    <div class="container">
+        <h1 class="page-hero-lead">
+            {{ $primary }}
+        </h1>
+
+        {{ if and (ne $secondary nil) (ne $secondary "") }}
+        <h2 class="page-hero-secondary">
+            {{ $secondary }}
+        </h2>
+        {{ end }}
+
+        {{ if and (eq .Kind "page") (eq .Type "posts") }}
+        <div class="page-hero-secondary page-hero-article-details">
+            {{ partial "article-date.html" . }}
+            {{ if and (isset .Params "categories") (isset .Params.categories 0) }}
+                {{ with $.Site.GetPage (printf "/%s/%s" "categories" ((index .Params.categories 0) | urlize)) }}
+                    &bull; <a href="{{ .RelPermalink }}" class="term-link">{{ .Title }}</a>
+                {{ end }}
+            {{ end }}
+        </div>
+        {{ end }}
+    </div>
+</div>

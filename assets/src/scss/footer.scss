@@ -1,0 +1,17 @@
+.footer {
+  padding: 1.875rem 0;
+  text-align: center;
+
+  box-shadow: inset 0 1px 0 rgba($gray-800, 0.12);
+  background-color: $white;
+
+  p {
+    margin-bottom: .5rem;
+  }
+
+  .social-links {
+    a {
+      color: inherit;
+    }
+  }
+}

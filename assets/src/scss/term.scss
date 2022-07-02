@@ -1,0 +1,40 @@
+.term-link {
+  font-weight: 800;
+  color: inherit;
+  text-transform: uppercase;
+}
+
+.terms-list {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+
+  .article-list-title {
+    a {
+      color: inherit;
+    }
+  }
+
+  &.terms-list-big {
+    .terms-list-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+  }
+
+  &.terms-list-small {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    .terms-list-item {
+      padding: .5rem;
+
+      &:not(:last-child) {
+        margin-right: .5rem;
+      }
+    }
+  }
+}

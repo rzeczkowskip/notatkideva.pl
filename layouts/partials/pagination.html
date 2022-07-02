@@ -1,11 +1,11 @@
 {{ $pag := $.Paginator }}
 
 {{ if gt $pag.TotalPages 1 -}}
-<nav class="my-4">
-    <ul class="d-flex justify-center list-unstyled">
+<nav class="pagination">
+    <ul>
         {{ if $pag.HasPrev }}
-        <li class="ms-0 me-auto">
-            <a href="{{ $pag.Prev.URL }}">
+        <li>
+            <a href="{{ $pag.Prev.URL }}" class="btn">
                 <span aria-hidden="true">&larr;</span> Poprzednia strona
             </a>
         </li>
@@ -13,7 +13,7 @@
 
         {{ if $pag.HasNext }}
         <li class="me-0 ms-auto">
-            <a href="{{ $pag.Next.URL }}">
+            <a href="{{ $pag.Next.URL }}" class="btn">
                 Następna strona <span aria-hidden="true">&rarr;</span>
             </a>
         </li>

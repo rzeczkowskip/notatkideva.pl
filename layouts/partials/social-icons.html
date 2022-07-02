@@ -1,7 +1,7 @@
-<ul class="justify-content-center list-unstyled d-flex social-links">
+<ul class="social-links">
 {{ range $socialKey,$socialData := sort .Site.Data.social "order" "asc" }}
-    <li class="ms-3">
-        <a class="text-reset" href="{{ .url }}">{{ .icon | safeHTML }}</a>
+    <li>
+        <a href="{{ .url }}">{{ .icon | safeHTML }}</a>
     </li>
 {{ end }}
 </ul>

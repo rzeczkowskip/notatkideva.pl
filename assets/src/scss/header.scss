@@ -1,0 +1,130 @@
+$header-breakpoint: 'md';
+$header-height-small: 3.75rem;
+$header-height-big: 5.25rem;
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  height: $header-height-small;
+  background-color: $white;
+  padding: 1rem;
+
+  position: relative;
+
+  box-shadow: 0 4px 70px rgba($gray-800, .08);
+
+  @include media-breakpoint-up($header-breakpoint) {
+    height: $header-height-big;
+  }
+
+  .brand {
+    display: flex;
+    align-items: center;
+    color: $gray-800;
+    text-decoration: none;
+    height: 100%;
+
+    .brand-text {
+      font-weight: 800;
+      font-size: 1.3rem;
+      display: none;
+
+      @include media-breakpoint-up('sm') {
+        display: block;
+      }
+    }
+
+    &:hover {
+      text-decoration: none;
+    }
+
+    img {
+      display: block;
+      width: auto;
+      height: 100%;
+      margin-right: .75rem;
+    }
+  }
+
+  .nav {
+    margin-left: auto;
+
+    #nav-toggle {
+      border: 0;
+      background: transparent;
+      display: block;
+
+      @include media-breakpoint-up($header-breakpoint) {
+        display: none;
+      }
+    }
+
+    .nav-menu {
+      display: none;
+
+      position: absolute;
+
+      overflow: auto;
+      left: 0;
+      width: 100%;
+      height: calc(100vh - #{$header-height-small});
+      top: $header-height-small;
+
+      background-color: $white;
+
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+
+      @include media-breakpoint-up($header-breakpoint) {
+        height: auto;
+        position: static;
+        width: auto;
+        background-color: transparent;
+        display: flex;
+      }
+
+      &.show {
+        display: block;
+      }
+
+      .nav-item {
+        line-height: 1;
+        font-size: 1.375rem;
+        font-weight: 600;
+        text-align: center;
+
+        @include media-breakpoint-up($header-breakpoint) {
+          font-size: 1rem;
+        }
+
+        .nav-link {
+          display: block;
+          padding: 1rem;
+          text-decoration: none;
+
+          color: inherit;
+
+          border-bottom: 1px solid $gray-100;
+
+          &:hover {
+            background-color: $gray-100;
+            text-decoration: none;
+          }
+
+          @include media-breakpoint-up($header-breakpoint) {
+            border: 0;
+
+            &:hover {
+              background-color: inherit;
+              color: $link-color;
+              text-decoration: underline;
+            }
+          }
+        }
+      }
+    }
+  }
+}

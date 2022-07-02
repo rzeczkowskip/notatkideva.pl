@@ -1,8 +1,22 @@
 {
-  "dist/app.css": "/dist/app.4f9e21d5.css",
-  "dist/app.js": "/dist/app.6c003a96.js",
-  "dist/fonts/LatoLatin-Italic.woff": "/dist/fonts/LatoLatin-Italic.39aa466c.woff",
-  "dist/fonts/LatoLatin-Regular.woff": "/dist/fonts/LatoLatin-Regular.ddabf82b.woff",
-  "dist/fonts/LatoLatin-Semibold.woff": "/dist/fonts/LatoLatin-Semibold.d120dac8.woff",
-  "dist/fonts/LatoLatin-SemiboldItalic.woff": "/dist/fonts/LatoLatin-SemiboldItalic.20c6baa1.woff"
+  "dist/app.css": "/dist/app.8dcba039.css",
+  "dist/app.js": "/dist/app.9b872868.js",
+  "dist/fonts/mulish-all-400-normal.woff": "/dist/fonts/mulish-all-400-normal.38c7d04e.woff",
+  "dist/fonts/mulish-all-600-normal.woff": "/dist/fonts/mulish-all-600-normal.58d46f10.woff",
+  "dist/fonts/mulish-all-800-normal.woff": "/dist/fonts/mulish-all-800-normal.cddc8a57.woff",
+  "dist/fonts/mulish-cyrillic-400-normal.woff2": "/dist/fonts/mulish-cyrillic-400-normal.923a4eb3.woff2",
+  "dist/fonts/mulish-cyrillic-600-normal.woff2": "/dist/fonts/mulish-cyrillic-600-normal.c36dfd29.woff2",
+  "dist/fonts/mulish-cyrillic-800-normal.woff2": "/dist/fonts/mulish-cyrillic-800-normal.f25002aa.woff2",
+  "dist/fonts/mulish-cyrillic-ext-400-normal.woff2": "/dist/fonts/mulish-cyrillic-ext-400-normal.7c7ffeea.woff2",
+  "dist/fonts/mulish-cyrillic-ext-600-normal.woff2": "/dist/fonts/mulish-cyrillic-ext-600-normal.eed7f500.woff2",
+  "dist/fonts/mulish-cyrillic-ext-800-normal.woff2": "/dist/fonts/mulish-cyrillic-ext-800-normal.0bbcfff1.woff2",
+  "dist/fonts/mulish-latin-400-normal.woff2": "/dist/fonts/mulish-latin-400-normal.789d075c.woff2",
+  "dist/fonts/mulish-latin-600-normal.woff2": "/dist/fonts/mulish-latin-600-normal.0a9f3718.woff2",
+  "dist/fonts/mulish-latin-800-normal.woff2": "/dist/fonts/mulish-latin-800-normal.66e8393a.woff2",
+  "dist/fonts/mulish-latin-ext-400-normal.woff2": "/dist/fonts/mulish-latin-ext-400-normal.37d18d40.woff2",
+  "dist/fonts/mulish-latin-ext-600-normal.woff2": "/dist/fonts/mulish-latin-ext-600-normal.365a3f4c.woff2",
+  "dist/fonts/mulish-latin-ext-800-normal.woff2": "/dist/fonts/mulish-latin-ext-800-normal.e39e21df.woff2",
+  "dist/fonts/mulish-vietnamese-400-normal.woff2": "/dist/fonts/mulish-vietnamese-400-normal.0c5054fb.woff2",
+  "dist/fonts/mulish-vietnamese-600-normal.woff2": "/dist/fonts/mulish-vietnamese-600-normal.a9f0204e.woff2",
+  "dist/fonts/mulish-vietnamese-800-normal.woff2": "/dist/fonts/mulish-vietnamese-800-normal.d5890e52.woff2"
 }

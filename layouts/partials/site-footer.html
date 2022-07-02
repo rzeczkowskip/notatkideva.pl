@@ -1,24 +1,11 @@
-<footer class="bg-footer text-white pb-3 pt-5">
-    <div class="container">
-        <section class="text-center">
-            <img class="mb-3 img-fluid d-block mx-auto rounded" src="{{ ((resources.Get "/images/me-zoomed.jpg").Resize
-            "200x q100").RelPermalink }}" alt="">
+<footer class="footer">
+    <p>Copyright &copy; <a href="{{ .Site.Home.RelPermalink }}">{{ .Site.Title }}</a></p>
+    <p>
+        Design
+        <a target="_blank" rel="nofollow" href="https://www.figma.com/community/file/1084863808351306117">"Presonally"</a>
+        by <a target="_blank" rel="nofollow" href="https://www.figma.com/@elikemdaniels">@elikemdaniels</a>
+        is licensed under <a target="_blank" rel="nofollow" href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>.
+    </p>
 
-            <p>
-                To ja. Dev. A tu więcej <a class="text-reset" href="{{ (.GetPage "o-mnie").RelPermalink }}">o
-                mnie</a>.
-            </p>
-
-            <div class="fs-3 mt-5">
-                {{ partial "social-icons.html" . }}
-            </div>
-        </section>
-
-        <div class="text-center small mt-5">
-            <p class="mb-0">
-                Copyright &copy;
-                <a class="text-reset" href="{{ .Site.Home.RelPermalink }}">{{ .Site.Title }}</a>
-            </p>
-        </div>
-    </div>
+    {{ partial "social-icons.html" . }}
 </footer>

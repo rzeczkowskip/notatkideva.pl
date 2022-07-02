@@ -1,13 +1,13 @@
 {{ define "main" }}
 
-<h1 class="text-center my-5">
-  {{ if eq .Type "tags" }}#{{ end }}{{ .Title }}
-</h1>
+{{ $pages := where $.Site.RegularPages "Type" "posts" }}
+<div class="main-padded">
+  <div class="container">
+    {{ partial "article-list.html" .Paginator.Pages }}
 
-{{ range .Paginator.Pages }}
-  {{- partial "summary.html" . -}}
-{{ end }}
-
-{{ partial "pagination.html" . }}
-
+    <div class="article-list">
+      {{ partial "pagination.html" . }}
+    </div>
+  </div>
+</div>
 {{ end }}

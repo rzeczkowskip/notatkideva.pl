@@ -1,0 +1,46 @@
+$article-markup-container-text-diff: 6.25rem;
+
+.article {
+  background-color: $white;
+  padding-bottom: 5rem;
+
+  .article-hero {
+    margin-bottom: 1.875rem;
+
+    a {
+      display: block;
+      text-decoration: none;
+
+      img {
+        display: block;
+        width: 100%;
+        height: auto;
+        margin: 0 auto;
+        border-radius: 10px;
+      }
+    }
+  }
+
+  .markup {
+    > * {
+      @include media-breakpoint-up($markup-medium-breakpoint) {
+        width: calc(100% - #{$article-markup-container-text-diff});
+        margin-left: auto;
+        margin-right: auto;
+      }
+    }
+
+    table {
+      width: calc(100% - #{$article-markup-container-text-diff});
+    }
+
+    blockquote, figure {
+      width: 100%;
+    }
+  }
+
+  .article-meta {
+    margin-top: 3.75rem;
+    font-size: 0.8125rem;
+  }
+}

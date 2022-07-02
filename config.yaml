@@ -4,8 +4,6 @@ title: 'Notatki Deva'
 
 sectionPagesMenu: ''
 
-disqusShortname: 'notatkideva'
-
 disableKinds: []
 ignoreErrors: ["error-disable-taxonomy"]
 
@@ -29,11 +27,9 @@ related:
         - name: series
           weight: 200
         - name: categories
-          weight: 50
+          weight: 80
         - name: tags
-          weight: 100
-        - name: date
-          weight: 10
+          weight: 80
     threshold: 80
     toLower: false
 
