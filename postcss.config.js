@@ -12,11 +12,11 @@ if (process.env.NODE_ENV === 'production') {
     ],
     safelist: {
       deep: [/^chroma/],
-      standard: ['pre', 'code'],
+      standard: ['pre', 'code', 'show'],
     },
   }));
 }
 
 module.exports = {
   plugins,
-}
+};
