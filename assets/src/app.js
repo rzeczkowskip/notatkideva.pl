@@ -1,7 +1,3 @@
-import '@fontsource/mulish/latin-ext-400.css';
-import '@fontsource/mulish/latin-ext-600.css';
-import '@fontsource/mulish/latin-ext-800.css';
-
 import './app.scss';
 import './syntax.css';
 
