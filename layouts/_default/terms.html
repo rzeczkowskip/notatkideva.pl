@@ -8,25 +8,27 @@
 {{ end }}
 
 <div class="main-padded">
-    <div class="markup-container">
-        {{ $taxonomy := .Data.Plural }}
-        <ul class="terms-list {{ $termsListClass }}">
-            {{ range .Data.Terms.Alphabetical }}
-            {{ with $.Site.GetPage (printf "/%s/%s" $taxonomy (.Name | urlize)) }}
+    <div class="container">
+        <div class="markup-container">
+            {{ $taxonomy := .Data.Plural }}
+            <ul class="terms-list {{ $termsListClass }}">
+                {{ range .Data.Terms.Alphabetical }}
+                {{ with $.Site.GetPage (printf "/%s/%s" $taxonomy (.Name | urlize)) }}
 
-            <li class="terms-list-item">
-                {{ if eq $termsListBig 1 }}
+                <li class="terms-list-item">
+                    {{ if eq $termsListBig 1 }}
                     <h2 class="article-list-title">
                         <a href="{{ .RelPermalink }}">{{ .Title }}</a>
                     </h2>
                     <a href="{{ .RelPermalink }}" class="btn">Zobacz wpisy</a>
-                {{ else }}
+                    {{ else }}
                     <a href="{{ .RelPermalink }}" class="term-link">{{ .Title }}</a>
+                    {{ end }}
+                </li>
                 {{ end }}
-            </li>
-            {{ end }}
-            {{ end }}
-        </ul>
+                {{ end }}
+            </ul>
+        </div>
     </div>
 </div>
 {{ end }}

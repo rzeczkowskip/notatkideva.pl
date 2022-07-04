@@ -1,11 +1,13 @@
 <footer class="footer">
-    <p>Copyright &copy; <a href="{{ .Site.Home.RelPermalink }}">{{ .Site.Title }}</a></p>
-    <p>
-        Design
-        <a target="_blank" rel="nofollow" href="https://www.figma.com/community/file/1084863808351306117">"Presonally"</a>
-        by <a target="_blank" rel="nofollow" href="https://www.figma.com/@elikemdaniels">@elikemdaniels</a>
-        is licensed under <a target="_blank" rel="nofollow" href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>.
-    </p>
+    <div class="container">
+        <p>Copyright &copy; <a href="{{ .Site.Home.RelPermalink }}">{{ .Site.Title }}</a></p>
+        <p>
+            Design
+            <a target="_blank" rel="nofollow" href="https://www.figma.com/community/file/1084863808351306117">"Presonally"</a>
+            by <a target="_blank" rel="nofollow" href="https://www.figma.com/@elikemdaniels">@elikemdaniels</a>
+            is licensed under <a target="_blank" rel="nofollow" href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>.
+        </p>
 
-    {{ partial "social-icons.html" . }}
+        {{ partial "social-icons.html" . }}
+    </div>
 </footer>

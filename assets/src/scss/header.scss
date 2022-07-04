@@ -9,7 +9,7 @@ $header-height-big: 5.25rem;
 
   height: $header-height-small;
   background-color: $white;
-  padding: 1rem;
+  padding: 1rem $container-padding-x;
 
   position: relative;
 
