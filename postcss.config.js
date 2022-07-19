@@ -11,7 +11,7 @@ if (process.env.NODE_ENV === 'production') {
       `${__dirname}/data/**/*`,
     ],
     safelist: {
-      deep: [/^chroma/],
+      deep: [/^chroma/, /^markup/],
       standard: ['pre', 'code', 'show'],
     },
   }));
