@@ -64,6 +64,10 @@ $markup-container-width-medium: 38rem;
     color: $gray-800;
 
     margin: 1.25rem 0;
+
+    pre {
+      font-weight: initial;
+    }
   }
 
   table {
@@ -80,7 +84,6 @@ $markup-container-width-medium: 38rem;
 
   :not(pre) > code {
     font-size: .875em;
-    font-weight: 600;
 
     &:before,
     &:after {
