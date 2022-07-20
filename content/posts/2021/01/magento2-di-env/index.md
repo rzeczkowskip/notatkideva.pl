@@ -49,7 +49,7 @@ I do tego konfiguracja *di.xml*
 
 A na koniec *.env*
 
-```dotenv
+```env
 FOO_API_TOKEN=secret
 ```
 
@@ -90,7 +90,6 @@ class FooService extends \Vendor\Library\FooService
 Oczywiście *di.xml* wymagało poprawy:
 
 ```xml
-
 <type name="App\Module\FooService">
     <arguments>
         <argument name="token" xsi:type="init_parameter">App\Module\FooService::ENV_VAR_TOKEN</argument>
