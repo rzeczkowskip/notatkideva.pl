@@ -1,0 +1,13 @@
+{{/* this has to be unindented, otherwise markdown will treat the indented code as code block */}}
+{{ $type := (.Get 0) }}
+<div class="block {{ if $type }}block-{{ $type }}{{ end }}">
+{{- if and ($type) (fileExists (printf "assets/block-icons/%s.svg" $type)) (ne (.Get 1) "no-icon") -}}
+<div class="block-icon">
+    {{ readFile (printf "assets/block-icons/%s.svg" $type) | safeHTML }}
+</div>
+{{- end -}}
+
+<div class="block-content">
+    {{ .Inner }}
+</div>
+</div>

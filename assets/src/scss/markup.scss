@@ -70,6 +70,45 @@ $markup-container-width-medium: 38rem;
     }
   }
 
+  .block {
+    border-bottom: 3px solid transparent;
+    border-radius: .375rem;
+    background-color: $gray-100;
+    padding: .8rem 1.1rem;
+    line-height: 1.5;
+    margin-bottom: $paragraph-margin-bottom;
+    display: flex;
+
+    .block-icon {
+      display: block;
+      padding-right: .5rem;
+      flex-shrink: 0;
+
+      svg {
+        width: 1.5rem;
+        height: 1.5rem;
+      }
+    }
+
+    @each $block-type, $block in $block-map {
+      &.block-#{$block-type} {
+        border-color: map-get($block, 'border');
+        background-color: map-get($block, 'bg');
+        color: map-get($block, 'body');
+
+        .block-icon {
+          color: map-get($block, 'border');
+        }
+      }
+    }
+
+    .block-content {
+      > :last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
   table {
     @extend .table;
   }

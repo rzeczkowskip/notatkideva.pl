@@ -1,5 +1,5 @@
 import './app.scss';
-import './syntax.css';
+import './syntax.scss';
 
 import useToggle from './components/toggle';
 import usePostProgress from './components/post-progress';

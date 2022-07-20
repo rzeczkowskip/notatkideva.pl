@@ -34,7 +34,7 @@ $article-markup-container-text-diff: 6.25rem;
       width: calc(100% - #{$article-markup-container-text-diff});
     }
 
-    blockquote, figure {
+    blockquote, figure, .block {
       width: 100%;
     }
   }

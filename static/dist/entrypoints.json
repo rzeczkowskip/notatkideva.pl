@@ -2,15 +2,15 @@
   "entrypoints": {
     "app": {
       "css": [
-        "/dist/app.6eb2e4a1.css"
+        "/dist/app.7d0a8dfb.css"
       ],
       "js": [
-        "/dist/app.d2ac5e7f.js"
+        "/dist/app.34db44d0.js"
       ]
     }
   },
   "integrity": {
-    "/dist/app.6eb2e4a1.css": "sha384-HT5efIhEKHBEEoFNsBRfFG5UjVI9oNtGvwn+15ZyerqlAE6moSJgl63vs49umv7D",
-    "/dist/app.d2ac5e7f.js": "sha384-VJrylfdrm10y7a3N3284WKmTAL7VdXGctuvZTF9ajvp4Su7Ct5ApZxxtcN1jfyeX"
+    "/dist/app.7d0a8dfb.css": "sha384-FMhXChjD6KtDQxAKGbQVP0QPaKV5H+xE/0zfJGkfPSgtR2aQg+tem0kVTbfmDRqH",
+    "/dist/app.34db44d0.js": "sha384-2yV2nQdeYVm0B+vDTZWAGiMus3uup5WJZ/wMTmALVL01tLrsCr2iNTUtEtQndluO"
   }
 }
