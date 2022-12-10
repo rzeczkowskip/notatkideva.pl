@@ -4,7 +4,9 @@ date: 2022-11-03
 tags: [php, phpcon]
 categories: [konferencje]
 draft: false
-
+summary: >-
+    Po ponad dwóch latach czekania, odbył się PHPCon 2022.
+    Tym razem spotkaliśmy się w Zawierciu na dwóch dniach wypełnionych wiedzą i rozmowami o PHP
 ---
 
 Po ponad dwóch latach czekania, 28 października, w hotelu Villa Verde Congress & SPA w Zawierciu, rozpoczął się [PHPCon][phpcon] ~~2020~~ ~~2021~~ 2022.
