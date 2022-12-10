@@ -18,13 +18,13 @@ Jednak nie mamy mówić o hotelu, a o konferencji...
 
 # Warsztaty
 
-Pierwszego dnia wydarzenia odbyły się warsztaty. Niestety nie udało nam się załapać na warsztat "Domain-Driven Design - modelowanie i implementacja agregatów" Mariusza Gila, który prowadzi podcast [Better Software Design][better-software-design]. Zamiast tego trafiliśmy na warsztaty "Jak dowiedzieć się dużo o swoim projekcie przy pomocy statycznej analizy kodu" oraz "Trunk Based Development i feature flags w istniejącym projekcie".
+Pierwszego dnia wydarzenia odbyły się warsztaty. Niestety nie udało nam się załapać na zajęcia "Domain-Driven Design - modelowanie i implementacja agregatów" Mariusza Gila. Zamiast tego wybraliśmy się na "Jak dowiedzieć się dużo o swoim projekcie przy pomocy statycznej analizy kodu" oraz "Trunk Based Development i feature flags w istniejącym projekcie".
 
 ## Jak dowiedzieć się dużo o swoim projekcie przy pomocy statycznej analizy kodu
 
 Prowadzący: Grzegorz Byrka i Paweł Cierzniakowski
 
-Grzegorz i Paweł zaczęli od zaprezentowania [SonarQube][sonarqube] - narzędzia do którego można przekazać kod projektu do przeskanowania. W rezultacie SonarQube zwraca potencjalne problemy w kodzie oraz prezentuje wszystko w przystępnej formie.
+Grzegorz i Paweł zaczęli od zaprezentowania [SonarQube][sonarqube] - narzędzia, które może przeskanować kod projektu w celu wykrycia problemów w kodzie. Po skanowaniu, wszystko może być zaprezentowane w przystępnej formie.
 
 ![sonarqube-example]
 
@@ -32,19 +32,19 @@ Poza PHP, "sonar" obsługuje 28 innych języków, więc sprawdzi się w projekta
 
 Skoro jesteśmy już przy różnych technologiach, Grzegorz stworzył narzędzie o nazwie [Git Static Analyzer][git-static-analyzer] pozwalające na wyciągnięcie z repozytorium Git informacji o projekcie:
 
-- daty pierwszej oraz ostatniej zmiany w kodzie
-- listę najczęściej modyfikowanych plików (wraz z ilością modyfikacji)
-- diagram aktywnych kontrybutorów
+- daty pierwszej oraz ostatniej zmiany w kodzie,
+- listę najczęściej modyfikowanych plików (wraz z ilością modyfikacji),
+- diagram aktywnych kontrybutorów.
 
-W drugiej części warsztatu skupiliśmy się na narzędziach dedykowanych językowi PHP - [Psalm][psalm], [PHPStan][phpstan] oraz [Deptrac][deptrc]. Wykorzystując aktywne projekty open-source skonfigurowaliśmy oraz przetestowaliśmy każde z tych narzędzi, a prowadzący omówili wyniki, powiedzieli na co zwracać uwagę oraz jak je wdrożyć w istniejących projektach.
+W drugiej części warsztatu skupiliśmy się na narzędziach dedykowanych językowi PHP - [Psalm][psalm], [PHPStan][phpstan] oraz [Deptrac][deptrac]. Wykorzystując aktywne projekty open-source skonfigurowaliśmy oraz przetestowaliśmy każde z tych narzędzi, a prowadzący omówili wyniki, powiedzieli na co zwracać uwagę oraz jak je wdrożyć w istniejących projektach.
 
 ## Trunk Based Development i feature flags w istniejącym projekcie
 
 Prowadzący: Adrian Słowik ([FeatureFlags.pl][feature-flags-pl])
 
-Adrian zaprezentował, na przykładowym projekcie, w jaki sposób korzystać z feature flags - czyli przełączników włączających i wyłączających funkcjonalności w kodzie.
+Adrian pokazał w jaki sposób korzystać z feature flags - czyli przełączników włączających i wyłączających funkcjonalności w kodzie.
 
-Przeszliśmy przez cały okres życia flagi - od wdrożenia, przez wykorzystanie, do czyszczenia kodu. Po drodze, do każdego dopisanego kawałka kodu, pisaliśmy testy jednostkowe - co rzadko się zdarza na warsztatach przy ograniczonym czasie na prowadzenie zajęć.
+Przeszliśmy przez cały okres życia flagi - od wdrożenia, przez wykorzystanie, do usunięcia nieużywanych flag. Po drodze, do każdego dopisanego kawałka kodu, pisaliśmy testy jednostkowe - co rzadko się zdarza na warsztatach, ze względu na ograniczony czas.
 
 Na koniec omówiliśmy bardziej skomplikowane zmiany czy to, w jaki sposób kilka flag może wpływać na siebie nawzajem.
 
@@ -52,7 +52,7 @@ Całość oparta była na [Framework X][framework-x], o którym żaden z uczestn
 
 # Dzień drugi - prelekcje
 
-Całodzienne prelekcje zostały podzielone na trzy ścieżki - zieloną, czerwoną oraz niebieską. Oficjalne otwarcie konferencji nastąpiło o 9:00.
+Całodzienne prelekcje zostały podzielone na trzy ścieżki - zieloną, czerwoną oraz niebieską. Oficjalne otwarcie konferencji nastąpiło o 9:00, a o 9:30 mogliśmy brać udział w pierwszych prelekcjach.
 
 ## Domain Driven Design - Jak zacząć?
 
@@ -84,15 +84,13 @@ Po intensywnym dniu zdobywania wiedzy, przyszedł czas na relaks. organizatorzy 
 
 # Dzień trzeci - wolne
 
-Podczas tej edycji, nie było drugiego dnia prelekcji (i trzeciego konferencji). Organizatorzy tłumaczyli to tym, że niedzielne prezentacje zawsze cieszyły się małym zainteresowaniem. Cześć osób opuszcza hotel z samego rana, inny dochodzą do siebie bo sobotniej nocy.
+Podczas tej edycji, nie było drugiego dnia prelekcji. Organizatorzy tłumaczyli to tym, że niedzielne prezentacje zawsze cieszyły się małym zainteresowaniem. Cześć osób opuszcza hotel z samego rana, inny dochodzą do siebie bo sobotniej nocy.
 
 Gdy pierwszy raz o tym usłyszałem, odrobinę się zdziwiłem. Po chwili, przypomniałem sobie, jak wyglądały moje niedziele na takich konferencjach i... W pełni popieram taką decyzję. Ani się człowiek nie skupi na słuchaniu prelegentów, ani prelegenci nie będą zadowoleni z niemrawej widowni, do której trudno dotrzeć.
 
 # Podsumowanie
 
-Miło było powrócić na PHPCon po trzech latach. Organizacja stała na wysokim poziomie, a cały hotel był świetnie oznakowany - co miało znaczenie przy poszukiwaniu sal warsztatowych, które były rozsiane po całym obiekcie.
-
-Jeżeli w trakcie imprezy wystąpiły jakiekolwiek problemy techniczne, to nie dało się ich odczuć - najprawdopodobniej dzięki natychmiastowej reakcji organizatorów na każdy problem.
+Miło było powrócić po trzech latach na PHPCon. Organizacja stała na wysokim poziomie, a cały hotel był świetnie oznakowany - co miało znaczenie przy poszukiwaniu sal warsztatowych, które były rozsiane po całym obiekcie. Jeżeli w trakcie imprezy wystąpiły jakiekolwiek problemy techniczne, to nie dało się ich odczuć.
 
 W tym roku, niestety, nie odważyłem się wysłać swojej prezentacji... Może za rok...
 
@@ -113,7 +111,7 @@ Serdecznie dziękuję za sprawne załatwienie sprawy i możliwość zdobycia sł
 [better-software-design]: https://bettersoftwaredesign.pl/
 [phpcon]: https://phpcon.pl
 [feature-flags-pl]: https://featureflags.pl/
-[sonar-qube]: https://www.sonarqube.org/
+[sonarqube]: https://www.sonarqube.org/
 [git-static-analyzer]: https://github.com/gbyrka/git-static-analyzer
 [psalm]: https://psalm.dev
 [phpstan]: https://phpstan.org/
