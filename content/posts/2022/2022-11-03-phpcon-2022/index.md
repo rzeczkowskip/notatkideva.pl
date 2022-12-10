@@ -84,9 +84,11 @@ Po intensywnym dniu zdobywania wiedzy, przyszedł czas na relaks. organizatorzy 
 
 # Dzień trzeci - wolne
 
-Podczas tej edycji, nie było drugiego dnia prelekcji. Organizatorzy tłumaczyli to tym, że niedzielne prezentacje zawsze cieszyły się małym zainteresowaniem. Cześć osób opuszcza hotel z samego rana, inny dochodzą do siebie bo sobotniej nocy.
+Podczas tej edycji, nie było drugiego dnia prelekcji. Organizatorzy tłumaczyli to tym, że niedzielne prezentacje zawsze cieszyły się małym zainteresowaniem.
 
-Gdy pierwszy raz o tym usłyszałem, odrobinę się zdziwiłem. Po chwili, przypomniałem sobie, jak wyglądały moje niedziele na takich konferencjach i... W pełni popieram taką decyzję. Ani się człowiek nie skupi na słuchaniu prelegentów, ani prelegenci nie będą zadowoleni z niemrawej widowni, do której trudno dotrzeć.
+Gdy o tym usłyszałem, odrobinę się zdziwiłem. 
+
+Po chwili przypomniałem sobie jak wyglądały moje niedziele na takich konferencjach i... W pełni popieram taką decyzję. Ani się człowiek nie skupi na słuchaniu prelegentów, ani prelegenci nie będą zadowoleni z niemrawej widowni, do której trudno dotrzeć.
 
 # Podsumowanie
 
