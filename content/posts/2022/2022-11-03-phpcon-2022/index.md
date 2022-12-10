@@ -116,8 +116,8 @@ Serdecznie dziękuję za sprawne załatwienie sprawy i możliwość zdobycia sł
 [traefik]: https://hub.docker.com/_/traefik
 [turnioki]: http://www.turnioki.pl/
 
-[beer-wall]: ./beer-wall.png "Ściana piw w recepcji hotelu"
-[sonarqube-example]: ./sonarqube.png "Przykład wyników SonarQube"
-[fire-photo]: ./fire.png "Ognisko i piwo"
-[janusz]: ./janusz.png 'elePHPant "Janusz"'
-[team]: ./team.png "Ekipa na konferencji"
+[beer-wall]: ./beer-wall.jpg "Ściana piw w recepcji hotelu"
+[sonarqube-example]: ./sonarqube.jpg "Przykład wyników SonarQube"
+[fire-photo]: ./fire.jpg "Ognisko i piwo"
+[janusz]: ./janusz.jpg 'elePHPant "Janusz"'
+[team]: ./team.jpg "Ekipa na konferencji"
